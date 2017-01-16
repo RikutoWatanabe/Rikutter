@@ -1,7 +1,7 @@
 = div_for tweet, class: "list-group-item" do |t|
 	%h4.user
 		%span.user-name
-			= link_to t.user.name, user_path(t.user)
+			= link_to render_user_screen_name(t.user), user_path(t.user)
 		%span.user-id
 			@#{t.user.name}
 		%span.time.pull-right
