@@ -9,6 +9,15 @@
         .list-group
           .list-group-item
             .btn-group
-              = link_to "全ツイート", tweets_path, class: "active btn btn primary"
-              = link_to "フォローしている人のツイート", timeline_tweets_path, class: "btn btn-default"
+              - if request.path_info == tweets_path 
+                = link_to "全ツイート", tweets_path, class: "active btn btn primary"
+              - else
+                = link_to "全ツイート", tweets_path, class: "btn btn primary"
+
+              - if request.path_info == timeline_tweets_path
+                = link_to "フォローしている人のツイート", timeline_tweets_path, class: "active btn btn-default"
+              - else
+                = link_to "フォローしている人のツイート", timeline_tweets_path, class: "btn btn-default"
+
+                
         = render partial: "users/tweet", collection: @tweets

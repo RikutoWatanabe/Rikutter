@@ -15,9 +15,15 @@
 				= link_to "お気に入り解除", tweet_favorite_path(t,t.user), method: :delete
 			- else
 				= link_to "お気に入り登録", tweet_favorites_path(t), method: :post
+			
 			- if t.user.followed_by? current_user
 				= link_to "フォロー解除", user_follows_path(t.user),method: :delete
 			- elsif t.user == current_user
 				あなた
 			- else
 				= link_to "フォロー", user_follows_path(t.user),method: :post
+
+			- if t.user == current_user
+				= link_to tweet_path(t),method: :delete,data:{confirm: "本当に削除しますか？"}, class: "pull-right signup" do 
+					削除
+			- else
