@@ -1,0 +1,11 @@
+/Users/RikutoW/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20170109-43144-nxe7z8.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20170109-43144-1506fxz
