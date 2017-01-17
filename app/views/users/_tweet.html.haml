@@ -12,9 +12,9 @@
 			= t.content
 		.content_footer
 			- if t.favorited_by? current_user
-				= link_to image_tag('night2.png'), tweet_favorite_path(t,t.user), method: :delete
+				= link_to image_tag('night1.png'), tweet_favorite_path(t,t.user), method: :delete
 			- else
-				= link_to image_tag('night1.png'), tweet_favorites_path(t), method: :post
+				= link_to image_tag('night3.png'), tweet_favorites_path(t), method: :post
 			
 			%span.col-xs-offset-1
 		
