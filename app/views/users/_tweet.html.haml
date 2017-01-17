@@ -16,14 +16,17 @@
 			- else
 				= link_to image_tag('night1.png'), tweet_favorites_path(t), method: :post
 			
+			%span.col-xs-offset-1
+		
 			- if t.user.followed_by? current_user
-				= link_to "フォロー解除", user_follows_path(t.user),method: :delete
-			- elsif t.user == current_user
+				= link_to user_follows_path(t.user),method: :delete, class: "btn-sm btn-success" do
+					フォロー解除
+			- elsif t.user == current_user 
 				あなた
 			- else
-				= link_to "フォロー", user_follows_path(t.user),method: :post
+				= link_to user_follows_path(t.user),method: :post, class: "btn-sm btn-success" do
+					✔︎フォロー
 
 			- if t.user == current_user
-				= link_to image_tag('trash.png'),tweet_path(t),method: :delete,data:{confirm: "本当に削除しますか？"}, class: "pull-right signup"
-					
+				= link_to image_tag('trash.png'),tweet_path(t),method: :delete,data:{confirm: "本当に削除しますか？"}, class: "pull-right signup"		
 			- else
