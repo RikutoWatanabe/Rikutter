@@ -21,6 +21,9 @@ html, body
 	width: 100%
 	height: 100%
 
+$phone: "only screen and (max-width: 360px)"
+$tablet: "only screen and (max-width: 768px)"
+
 #application
 	background-color: #f5f5f5
 	background-image: asset-url("kirei.jpg")	
@@ -28,12 +31,18 @@ html, body
 	background-size:	cover
 	background-attachment: fixed
 	background-repeat:	no-repeat
-@media screen and (min-width: 768px) {
-	#application {    
-    	background-attachment: fixed;
-    	padding:5.3em 2.1em; 
-  	}
-}
+	
+	@media 	#{$phone}
+		background-color: #f5f5f5
+		background-image: asset-url("kirei.jpg")	
+		background-position:	center
+		background-size:	cover
+	@media	#{$tablet}
+		background-color: #f5f5f5
+		background-image: asset-url("kirei.jpg")	
+		background-position:	center
+		background-size:	cover
+
 
 
 .clear
